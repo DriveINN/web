@@ -1,0 +1,25 @@
+html
+    head
+        link(href='/style.css', rel='stylesheet')
+    body
+        div.screen.register_input-phone
+            span.top-header Добро пожаловать в DRIVE-INN
+            span.fs-20 Авторизация по номеру телефона
+            input.fs-30(type='text', value='+7 (000) 000 00 00')
+            a.button(href='#get-sms-code') Войти
+            div Или
+            a(href='#register') Зарегистрироваться
+
+        div.screen.register_phone-confirm
+            span.top-header Добро пожаловать в DRIVE-INN
+            span.fs-20 Введите СМС-код для авторизации
+            input.fs-30(type='text', value='0000')
+            div
+
+        div.screen.register_user-info
+            span.top-header Личные данные
+            input.fs-30(type='text', value='', placeholder='ФИО')
+            input.fs-30(type='text', value='', placeholder='E-mail')
+            input.fs-30(type='text', value='', placeholder='Пароль')
+            a(href='#get-sms-code') Условия соглашения
+            a.button(href='#get-sms-code') Завершить регистрацию приняв условия

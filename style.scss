@@ -1,0 +1,79 @@
+.screen {
+    color: #8B8B8B;
+    width: 416px;
+    height: 736px;
+    background-color: #F8F8F8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    border: 1px solid #000;
+
+
+    input {
+        background-color: #fff;
+        border: 0;
+        outline: none;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    a {
+        color: #3192EC;
+        text-decoration: none;
+        font-size: 16pt;
+    }
+    a.button {
+        width: 90%;
+        box-sizing: border-box;
+        border-width: 1px 0;
+        border-color: #8B8B8B;
+        border-style: solid;
+        display: block;
+        text-align: center;
+        padding: 0.4em 0;
+        color: #3192EC;
+        text-decoration: none;
+        font-size: 20pt;
+    }
+
+    input {
+        width: 100%;
+        height: 2em;
+    }
+
+    .top-header {
+        font-size: 36pt;
+        margin-bottom: 30px;
+    }
+}
+
+.register {
+
+    &_phone-confirm {
+        input {
+            width: 60%;
+        }
+
+    }
+}
+
+.fs-20 {
+    font-size: 20pt;
+}
+
+.fs-36 {
+    font-size: 36pt;
+}
+.fs-30 {
+    font-size: 30pt;
+}
+
+.fg-2 {
+    flex-grow: 2;
+}
+.fg-1 {
+    flex-grow: 1;
+}
