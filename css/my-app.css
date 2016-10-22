@@ -360,7 +360,7 @@ html.ios-gt-8 .navbar .center {
   color: #9B9B9B;
 }
 .refuel-adress {
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
   font-weight: lighter;
   font-size: 36px;
@@ -407,6 +407,25 @@ html.ios-gt-8 .navbar .center {
   position: absolute;
   right: 10px;
   top: 14px;
+}
+.order-info-box {
+  padding: 40px 20px;
+}
+.order-info-box .text1 {
+  font-size: 33px;
+  overflow: hidden;
+  border-bottom: 1px solid #979797;
+  padding-bottom: 10px;
+}
+.order-info-box .text1 span {
+  float: right;
+}
+.order-info-box .text2 {
+  font-size: 24px;
+  padding: 15px 0;
+}
+.order-info-box .text2 span {
+  float: right;
 }
 /* icons */
 i.icon.icon-car {
