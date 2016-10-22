@@ -22,53 +22,132 @@
         <div class="navbar">
           <!-- Navbar inner for Index page-->
           <div data-page="index" class="navbar-inner">
-            <div class="left"><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a></div>
-            <div class="center sliding">Драйв INN</div>
-            <div class="right"><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a></div>
+            <div class="left"><a href="#" class="link icon-only"> <i class="icon icon-car"></i></a></div>
+            <div class="center sliding color-white">Драйв INN</div>
+            <div class="right"><a href="#" class="link icon-only"> <i class="icon icon-settings"></i></a></div>
           </div>
-          <!-- Navbar inner for About page-->
-          <div data-page="about" class="navbar-inner cached">
-            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding">About Us</div>
+          <!-- Navbar inner for Wallet page-->
+          <div data-page="wallet" class="navbar-inner cached">
+            <div class="left"><a href="#" class="link icon-only back color-white"> <i class="icon icon-back color-white"></i></a></div>
+            <div class="center sliding color-white">Топливная карта</div>
+            <div class="right"><a href="#" class="link icon-only"> <i class="icon icon-cart"></i></a></div>
           </div>
-          <!-- Navbar inner for Services page-->
-          <div data-page="services" class="navbar-inner cached">
-            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding">Services</div>
-          </div>
-          <!-- Navbar inner for Form page-->
-          <div data-page="form" class="navbar-inner cached">
-            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding">Form</div>
+          <!-- Navbar inner for Gas Account page-->
+          <div data-page="gas-account" class="navbar-inner cached">
+            <div class="left"><a href="#" class="link icon-only back color-white"> <i class="icon icon-back color-white"></i></a></div>
+            <div class="center sliding color-white">АИ-95</div>
+            <div class="right"><a href="#" class="link icon-only"> <i class="icon icon-cart"></i></a></div>
           </div>
         </div>
         <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
         <div class="pages navbar-through toolbar-through">
           <!-- Index Page-->
           <div data-page="index" class="page">
-            <!-- Scrollable page content-->
-            <div class="page-content">
-              <div class="content-block-title">Welcome To My Awesome App</div>
-              
+            <a href="" class="gas-button open-popover" data-popover=".popover-gas"></a>
+            <div class="list-block main-list">
+              <ul>
+                <li>
+                  <a href="#wallet" class="list-top-item">
+                    <div class="text1">Ваш баланс</div>
+                    <div class="text2">638 <i class="icon icon-fire icon-fire-blue"></i> АИ-95</div>
+                    <div class="text3">83 балла</div>
+                  </a>
+                </li>
+                <li>
+                  <div class="list-item gas">
+                    <div class="list-item-title">-35 литров АИ-95</div>
+                    <div class="list-item-subtitle">Tesla Model S</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="list-item station">
+                    <div class="list-item-title">-35 литров АИ-95</div>
+                    <div class="list-item-subtitle">Tesla Model S</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="list-item gas">
+                    <div class="list-item-title">-35 литров АИ-95</div>
+                    <div class="list-item-subtitle">Tesla Model S</div>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
-          <!-- About Page-->
-          <div data-page="about" class="page cached">
-            <div class="page-content">
-              <div class="content-block">
-                
-              </div>
+          <!-- Walet Page-->
+          <div data-page="wallet" class="page cached">
+            <div class="list-block list-wallet">
+              <ul>
+                <li>
+                  <a href="#gas-account" class="item-link item-content">
+                    <div class="item-inner">
+                      <div class="item-title">АИ-95</div>
+                      <div class="item-after">638 <i class="icon icon-fire-2 icon-fire-blue"></i></div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="item-link item-content">
+                    <div class="item-inner">
+                      <div class="item-title">ДТ</div>
+                      <div class="item-after">638 <i class="icon icon-fire-2 icon-fire-blue"></i></div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="item-link item-content">
+                    <div class="item-inner">
+                      <div class="item-title">Бонусные баллы</div>
+                      <div class="item-after">63 <i class="icon icon-fire-2 icon-fire-blue"></i></div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
-          <!-- Services Page-->
-          <div data-page="services" class="page cached">
-            <div class="page-content">
-              
+          <!-- ai-95 Page-->
+          <div data-page="gas-account" class="page cached">
+            <div class="list-block main-list">
+              <ul>
+                <li>
+                  <a href="" class="list-top-item">
+                    <div class="text2">638 <i class="icon icon-fire icon-fire-blue"></i></div>
+                  </a>
+                </li>
+                <li>
+                  <div class="list-item gas">
+                    <div class="list-item-title">-35 литров АИ-95</div>
+                    <div class="list-item-subtitle">Tesla Model S</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="list-item station">
+                    <div class="list-item-title">-35 литров АИ-95</div>
+                    <div class="list-item-subtitle">Tesla Model S</div>
+                  </div>
+                </li>
+                <li>
+                  <div class="list-item gas">
+                    <div class="list-item-title">-35 литров АИ-95</div>
+                    <div class="list-item-subtitle">Tesla Model S</div>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- About popover -->
+    <div class="popover popover-gas">
+      <div class="popover-angle"></div>
+      <div class="popover-inner">
+        <div class="content-block">
+          text
+        </div>
+      </div>
+    </div>
+    <!-- Login Screen -->
     <div class="login-screen">
       <div class="view">
         <div class="page">
