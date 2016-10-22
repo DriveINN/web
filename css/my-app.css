@@ -382,6 +382,32 @@ html.ios-gt-8 .navbar .center {
   display: block;
   font-size: 16px;
 }
+.add-car-form .login-screen-title {
+  margin-top: 0;
+}
+.add-car-form .item-input {
+  padding: 10px 20px;
+  position: relative;
+}
+.add-car-form .item-input input {
+  line-height: 1.3em;
+  font-weight: lighter;
+  font-size: 33px;
+  color: #B6B6B6;
+}
+.add-car-form .item-input.input-info-row {
+  padding-right: 44px;
+}
+.add-car-form .item-input .input-info {
+  line-height: 1.3em;
+  font-weight: lighter;
+  font-size: 33px;
+  color: #B6B6B6;
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 14px;
+}
 /* icons */
 i.icon.icon-car {
   background-image: url(../images/sedan.png);
