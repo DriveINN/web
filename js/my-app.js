@@ -58,3 +58,7 @@ $('#regist-finish').on('click', function () {
   var popupHTML = '<div class="popup"><div class="login-screen-title">Регистрация завершена успешно!</div><a class="button-custom">Начать использование</a></div>';
   myApp.popup(popupHTML);
 });  
+$('#success-buy').on('click', function () {
+  var popupHTML = '<div class="popup"><div class="login-screen-title">Топливная карта<br> успешно пополнена</div><div class="title-custom"><span>+200</span> <i class="icon icon-fire icon-fire-blue"></i> АИ-95</div><div class="label">Пригласи друга и получите по 5 литров топлива каждый!<a>Выбрать друга</a></div><a class="button-custom">Закрыть</a></div>';
+  myApp.popup(popupHTML);
+});  
