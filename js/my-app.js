@@ -10,7 +10,7 @@ var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true
 });
 
-// myApp.loginScreen();
+myApp.loginScreen();
 // myApp.popup('.popup-userinfo');
 
 var inputL = 0;
@@ -38,6 +38,7 @@ $('#get-code-btn').on('click', function(){
     $('.item-phone, #login-btns').hide();
     $('.login-sub-title').html('Код полученный в СМС');
     $('.item-code, #code-btns').show();
+    $('#login-title').html('Регистрация<br> в DRIVE-INN');
 });
 $('#get-password').on('click', function () {
   var popupHTML = '<div class="popup"><div class="login-screen-title">Введите пароль</div><div class="list-block"><ul><li><div class="item-content"><div class="item-inner"><div class="item-input"><input type="password" placeholder=""></div></div></div></li></ul></div>';
