@@ -73,7 +73,8 @@ a{
 .login-screen-title{
     padding-top: 1em;
     color: #303030;
-    margin-top: 25px; 
+    margin-top: 25px;
+    font-weight: lighter; 
 }
 .list-block .item-input{
     background-color: #fff;
@@ -424,6 +425,11 @@ html.ios-gt-8 .navbar .center{
         display: block;
         font-size: 16px;
     }
+    .text1{
+        span{
+            float: right;
+        }
+    }
 }
 .add-car-form{
     .login-screen-title{
@@ -469,6 +475,56 @@ html.ios-gt-8 .navbar .center{
         padding: 15px 0;
         span{
             float: right;
+        }
+    }
+}
+.order-page {
+    .login-screen-title{
+        padding-top: 0;
+        margin-top: 5px; 
+    }
+}
+.additional{
+    overflow-y: hidden;
+    .additional-inner{
+        width: 944px;
+        overflow-y: scroll;
+        .additional-item{
+            padding: 20px 0 20px 20px;
+            width: 288px;
+            float: left;
+            .label-switch{
+                width: 100%;
+                height: inherit;
+                font-size: 24px;
+                font-weight: lighter;
+                position: relative;
+                .img{
+                    background-color: #fff;
+                    text-align: center;
+                    margin-bottom: 5px;
+                    padding: 45px 0 30px; 
+                }
+                .checkbox{
+                    position: absolute;
+                    top: 12px;
+                    right: 12px;
+                    background: url("../images/unchecked_checkbox_filled.png") 0 100% no-repeat;
+                    background-size: 55px 55px;
+                    width: 55px;
+                    height: 55px;
+                    border-radius: 0;
+                    &:before,
+                    &:after{
+                        display:none;
+                    }
+                }
+                input[type=checkbox]:checked+.checkbox{
+                    background: url("../images/checkmark_filled.png") 0 100% no-repeat;
+                    background-size: 55px 55px;
+                }
+            }
+
         }
     }
 }

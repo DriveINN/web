@@ -14,7 +14,7 @@ var mainView = myApp.addView('.view-main', {
 
 // myApp.loginScreen();
 // myApp.popup('.popup-userinfo');
-// mainView.router.loadPage('#order-info');
+mainView.router.loadPage('#order');
 
 var inputL = 0;
 $('input#phone').on('keyup keydown change', function () { 

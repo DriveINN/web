@@ -68,6 +68,7 @@ a {
   padding-top: 1em;
   color: #303030;
   margin-top: 25px;
+  font-weight: lighter;
 }
 .list-block .item-input {
   background-color: #fff;
@@ -407,6 +408,9 @@ html.ios-gt-8 .navbar .center {
   display: block;
   font-size: 16px;
 }
+.refuel-car .text1 span {
+  float: right;
+}
 .add-car-form .login-screen-title {
   margin-top: 0;
 }
@@ -451,6 +455,53 @@ html.ios-gt-8 .navbar .center {
 }
 .order-info-box .text2 span {
   float: right;
+}
+.order-page .login-screen-title {
+  padding-top: 0;
+  margin-top: 5px;
+}
+.additional {
+  overflow-y: hidden;
+}
+.additional .additional-inner {
+  width: 944px;
+  overflow-y: scroll;
+}
+.additional .additional-inner .additional-item {
+  padding: 20px 0 20px 20px;
+  width: 288px;
+  float: left;
+}
+.additional .additional-inner .additional-item .label-switch {
+  width: 100%;
+  height: inherit;
+  font-size: 24px;
+  font-weight: lighter;
+  position: relative;
+}
+.additional .additional-inner .additional-item .label-switch .img {
+  background-color: #fff;
+  text-align: center;
+  margin-bottom: 5px;
+  padding: 45px 0 30px;
+}
+.additional .additional-inner .additional-item .label-switch .checkbox {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: url("../images/unchecked_checkbox_filled.png") 0 100% no-repeat;
+  background-size: 55px 55px;
+  width: 55px;
+  height: 55px;
+  border-radius: 0;
+}
+.additional .additional-inner .additional-item .label-switch .checkbox:before,
+.additional .additional-inner .additional-item .label-switch .checkbox:after {
+  display: none;
+}
+.additional .additional-inner .additional-item .label-switch input[type=checkbox]:checked + .checkbox {
+  background: url("../images/checkmark_filled.png") 0 100% no-repeat;
+  background-size: 55px 55px;
 }
 /* icons */
 i.icon.icon-car {
