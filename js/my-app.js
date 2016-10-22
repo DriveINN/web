@@ -52,7 +52,7 @@ $('#get-password-2').on('click', function () {
   myApp.popup(popupHTML);
 });  
 $('#get-password-3').on('click', function () {
-  var popupHTML = '<div class="popup"><div class="login-screen-title">Подтвердите пароль</div><div class="list-block"><ul><li><div class="item-content"><div class="item-inner"><div class="item-input"><input type="password" placeholder=""></div></div></div></li></ul></div>';
+  var popupHTML = '<div class="popup"><div class="login-screen-title">Подтвердите пароль</div><div class="list-block list-block-password"><ul><li><div class="item-content"><div class="item-inner"><div class="item-input"><input type="password" placeholder="" maxlength="4"><span class="line line1"></span><span class="line line2"></span><span class="line line3"></span></div></div></div></li></ul></div>';
   myApp.popup(popupHTML);
 });  
 $('#regist-finish').on('click', function () {

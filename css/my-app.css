@@ -118,6 +118,31 @@ a {
 .list-block .item-link.list-button:after {
   display: none;
 }
+.list-block-password .item-input {
+  margin: 15px auto;
+  padding: 0 15px;
+  width: 200px;
+  position: relative;
+  box-sizing: border-box;
+}
+.list-block-password .item-input input {
+  font-size: 33px;
+  letter-spacing: 35px;
+}
+.list-block-password .item-input .line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: #F8F8F8;
+  width: 15px;
+  left: 42px;
+}
+.list-block-password .item-input .line.line2 {
+  left: 93px;
+}
+.list-block-password .item-input .line.line3 {
+  left: 145px;
+}
 /**/
 .statusbar-overlay,
 .navbar,

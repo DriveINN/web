@@ -124,7 +124,33 @@ a{
 .list-block .item-link.list-button:after{
     display: none;
 }
-
+.list-block-password{
+    .item-input{
+        margin: 15px auto;
+        padding: 0 15px;
+        width: 200px;
+        position: relative;
+        box-sizing: border-box;
+        input{
+            font-size: 33px;
+            letter-spacing: 35px;
+        }
+        .line{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            background-color: #F8F8F8;
+            width: 15px;
+            left: 42px;
+            &.line2{
+                left: 93px;
+            }
+            &.line3{
+                left: 145px;
+            }
+        }
+    }
+}
 /**/
 .statusbar-overlay,
 .navbar, .subnavbar, .toolbar{
