@@ -22,19 +22,19 @@
         <div class="navbar">
           <!-- Navbar inner for Index page-->
           <div data-page="index" class="navbar-inner">
-            <div class="left"><a href="#" class="link icon-only"> <i class="icon icon-car"></i></a></div>
+            <div class="left"><a href="#cars" class="link icon-only"> <i class="icon icon-car"></i></a></div>
             <div class="center sliding color-white">Драйв INN</div>
             <div class="right"><a href="#" class="link icon-only"> <i class="icon icon-settings"></i></a></div>
           </div>
           <!-- Navbar inner for Wallet page-->
           <div data-page="wallet" class="navbar-inner cached">
-            <div class="left"><a href="#" class="link icon-only back color-white"> <i class="icon icon-back color-white"></i></a></div>
+            <div class="left"><a href="#cars" class="link icon-only back color-white"> <i class="icon icon-back color-white"></i></a></div>
             <div class="center sliding color-white">Топливная карта</div>
             <div class="right"><a href="#buy" class="link icon-only"> <i class="icon icon-cart"></i></a></div>
           </div>
           <!-- Navbar inner for Gas Account page-->
           <div data-page="gas-account" class="navbar-inner cached">
-            <div class="left"><a href="#" class="link icon-only back color-white"> <i class="icon icon-back color-white"></i></a></div>
+            <div class="left"><a href="#cars" class="link icon-only back color-white"> <i class="icon icon-back color-white"></i></a></div>
             <div class="center sliding color-white">АИ-95</div>
             <div class="right"><a href="#buy" class="link icon-only"> <i class="icon icon-cart"></i></a></div>
           </div>
@@ -42,6 +42,17 @@
           <div data-page="buy" class="navbar-inner cached">
             <div class="center sliding color-white">Пополнить ТК</div>
             <div class="right"><a href="" class="link icon-only back"> <i class="icon icon-close"></i></a></div>
+          </div>
+          <!-- Navbar inner for Cars page-->
+          <div data-page="cars" class="navbar-inner cached">
+            <div class="left"><a href="" class="link icon-only back color-white"> <i class="icon icon-back color-white"></i></a></div>
+            <div class="center sliding color-white">Список автомобилей</div>
+            <div class="right"><a href="#" class="link icon-only"> <i class="icon icon-plus"></i></a></div>
+          </div>
+          <!-- Navbar inner for Map page-->
+          <div data-page="map" class="navbar-inner cached">
+            <div class="left"><a href="" class="link icon-only back color-white"> <i class="icon icon-back color-white"></i></a></div>
+            <div class="center sliding color-white">Заправки на карте</div>
           </div>
         </div>
         <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
@@ -204,6 +215,38 @@
               </ul>
             </div>
           </div>
+          <!-- Cars Page-->
+          <div data-page="cars" class="page cached">
+            <div class="list-block list-cars">
+              <ul>
+                <li>
+                  <a href="" class="item-link item-content">
+                    <div class="item-inner">
+                      <div class="item-title">Tesla Model S</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="item-link item-content">
+                    <div class="item-inner">
+                      <div class="item-title">Tesla Model S</div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="item-link item-content">
+                    <div class="item-inner">
+                      <div class="item-title">Tesla Model S</div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Map Page-->
+          <div data-page="map" class="page cached">
+            
+          </div>
         </div>
       </div>
     </div>
@@ -211,9 +254,10 @@
     <div class="popover popover-gas">
       <div class="popover-angle"></div>
       <div class="popover-inner">
-        <div class="content-block">
-          text
-        </div>
+        <ul class="popover-list">
+          <li><a href="#map" id="map-page-link">Найти заправку</a></li>
+          <li><a href="">Я на заправке<small>Ленинский пр-т 3/1</small></a></li>
+        </ul>
       </div>
     </div>
     <!-- Login Screen -->

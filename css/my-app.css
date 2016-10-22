@@ -213,6 +213,16 @@ html.ios-gt-8 .navbar .center {
   margin-top: 6px;
   margin-left: 3px;
 }
+.list-cars.list-block ul li a.item-content {
+  border-bottom: 1px solid #979797;
+}
+.list-cars.list-block ul li a.item-content .item-inner {
+  padding: 10px 30px 10px;
+}
+.list-cars.list-block ul li a.item-content .item-inner .item-title {
+  font-size: 21px;
+  font-weight: lighter;
+}
 .gas-main-list .list-top-item {
   background: #E8E8E8;
   padding: 5px 0;
@@ -294,6 +304,29 @@ html.ios-gt-8 .navbar .center {
   display: block;
   padding: 10px 0;
 }
+.popover-list {
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+}
+.popover-list li {
+  border-top: 1px solid #15A9DB;
+}
+.popover-list li:first-child {
+  border-top: none;
+}
+.popover-list li a {
+  display: block;
+  font-size: 24px;
+  color: #5E5E5E;
+  padding: 7px;
+  text-align: center;
+}
+.popover-list li a small {
+  display: block;
+  font-size: 16px;
+  color: #9B9B9B;
+}
 /* icons */
 i.icon.icon-car {
   background-image: url(../images/sedan.png);
@@ -345,4 +378,9 @@ i.icon.icon-back.color-white {
   width: 12px;
   height: 20px;
   background-image: url("data:image/svg+xml;charset=utf-8,<svg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2012%2020'><path%20d%3D'M10%2C0l2%2C2l-8%2C8l8%2C8l-2%2C2L0%2C10L10%2C0z'%20fill%3D'%23ffffff'%2F><%2Fsvg>");
+}
+i.icon.icon-plus {
+  width: 37px;
+  height: 20px;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3C!DOCTYPE%20svg%20%20PUBLIC%20'-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN'%20%20'http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd'%3E%3Csvg%20enable-background%3D%22new%200%200%2080%2080%22%20height%3D%2280px%22%20id%3D%22Icons%22%20version%3D%221.1%22%20viewBox%3D%220%200%2080%2080%22%20width%3D%2280px%22%20xml%3Aspace%3D%22preserve%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20fill%3D%22eeeeee%22%3E%3Cpolygon%20fill%3D%22%23ffffff%22%20points%3D%2261%2C37%2043%2C37%2043%2C19%2037%2C19%2037%2C37%2019%2C37%2019%2C43%2037%2C43%2037%2C61%2043%2C61%2043%2C43%2061%2C43%20%22%2F%3E%3C%2Fsvg%3E");
 }
