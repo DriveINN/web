@@ -54,11 +54,22 @@
             <div class="left"><a href="" class="link icon-only back color-white"> <i class="icon icon-back color-white"></i></a></div>
             <div class="center sliding color-white">Заправки на карте</div>
           </div>
+          <!-- Navbar inner for Refuel page-->
+          <div data-page="refuel" class="navbar-inner cached">
+            <div class="left"><a href="" class="link icon-only back color-white"> <i class="icon icon-back color-white"></i></a></div>
+            <div class="center sliding color-white">Заправка автомобиля</div>
+          </div>
+          <!-- Navbar inner for Payment Types page-->
+          <div data-page="payment-types" class="navbar-inner cached">
+            <div class="left"><a href="" class="link icon-only back color-white"> <i class="icon icon-back color-white"></i></a></div>
+            <div class="center sliding color-white">Способ оплаты</div>
+          </div>
         </div>
         <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
-        <div class="pages navbar-through toolbar-through">
+        <div class="pages navbar-through no-toolbar">
           <!-- Index Page-->
           <div data-page="index" class="page">
+            <div class="page-content">
             <a href="" class="gas-button open-popover" data-popover=".popover-gas"></a>
             <div class="list-block main-list">
               <ul>
@@ -89,9 +100,11 @@
                 </li>
               </ul>
             </div>
+            </div>
           </div>
           <!-- Walet Page-->
           <div data-page="wallet" class="page cached">
+            <div class="page-content">
             <div class="list-block list-wallet">
               <ul>
                 <li>
@@ -120,9 +133,11 @@
                 </li>
               </ul>
             </div>
+            </div>
           </div>
           <!-- ai-95 Page-->
           <div data-page="gas-account" class="page cached">
+            <div class="page-content">
             <div class="list-block main-list gas-main-list">
               <ul>
                 <li>
@@ -150,9 +165,11 @@
                 </li>
               </ul>
             </div>
+            </div>
           </div>
           <!-- buy Page-->
           <div data-page="buy" class="page cached">
+            <div class="page-content">
             <div class="list-block">
               <ul>
                 <li>
@@ -210,13 +227,15 @@
                   </div>
                 </li>
                 <li class="pad-top">
-                  <a href="#" id="get-password-2" class="item-link list-button list-button-custom">Купить топливо</a>
+                  <a href="#" id="" class="item-link list-button list-button-custom">Купить топливо</a>
                 </li>
               </ul>
+            </div>
             </div>
           </div>
           <!-- Cars Page-->
           <div data-page="cars" class="page cached">
+            <div class="page-content">
             <div class="list-block list-cars">
               <ul>
                 <li>
@@ -242,21 +261,126 @@
                 </li>
               </ul>
             </div>
+            </div>
           </div>
           <!-- Map Page-->
           <div data-page="map" class="page cached">
             
           </div>
+          <!-- refuel Page-->
+          <div data-page="refuel" class="page cached">
+            <div class="page-content">
+              <div class="list-block">
+                <div class="refuel-adress">
+                  Ленинский пр-т 3/1
+                  <small>АЗС № 198</small>
+                </div>
+                <div class="refuel-car">
+                  Tesla Model S
+                  <a href="">Выбрать другой</a>
+                </div>
+                <ul>
+                  <li>
+                    <div class="smart-select-label">Вид топлива</div>
+                    <div class="item-content">
+                      <div class="item-inner">
+                        <a href="#" class="item-link smart-select" data-open-in="picker">
+                          <select name="petrol">
+                            <option value="95" selected>АИ-95</option>
+                            <option value="92">АИ-92</option>
+                            <option value="98">АИ-98</option>
+                            <option value="98U">АИ-98U</option>
+                            <option value="Diesel">Diesel</option>
+                          </select>
+                          <div class="item-content">
+                            <div class="item-inner">
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="smart-select-label">На сумму или объем</div>
+                    <div class="item-content">
+                      <div class="item-inner">
+                        <div class="item-input input-row row">
+                          <i class="icon icon-fire icon-fire-blue"></i>
+                          <div class="col-50"><input id="" type="text" value="" placeholder="P"></div>
+                          <span> / </span>
+                          <div class="col-50"><input id="" type="text" value=""></div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="smart-select-label">Способ оплаты</div>
+                    <div class="item-content">
+                      <div class="item-inner">
+                        <a href="#payment-types" class="item-link pay-custom">
+                          <div class="text1">Топливная карта</div>
+                          <div class="text2">АИ-95 <span>638 <i class="icon icon-fire icon-fire-blue"></i></span></div>
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="pad-top">
+                    <a href="#" id="" class="item-link list-button list-button-custom">Заправить</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Payment Types Page-->
+          <div data-page="payment-types" class="page cached">
+            <div class="page-content">
+            <div class="list-block list-wallet">
+              <ul>
+                <li>
+                  <a href="#" class="item-link item-content">
+                    <div class="item-inner">
+                      <div class="item-title">АИ-95</div>
+                      <div class="item-after">638 <i class="icon icon-fire-2 icon-fire-blue"></i></div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="item-link item-content">
+                    <div class="item-inner">
+                      <div class="item-title">ДТ</div>
+                      <div class="item-after">638 <i class="icon icon-fire-2 icon-fire-blue"></i></div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="item-link item-content">
+                    <div class="item-inner">
+                      <div class="item-title">Бонусные баллы</div>
+                      <div class="item-after">63 <i class="icon icon-fire-2 icon-fire-blue"></i></div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="item-link item-content">
+                    <div class="item-inner">
+                      <div class="item-title">0000 00** **00 0000</div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <!-- About popover -->
+    <!-- Gas popover -->
     <div class="popover popover-gas">
       <div class="popover-angle"></div>
       <div class="popover-inner">
         <ul class="popover-list">
           <li><a href="#map" id="map-page-link">Найти заправку</a></li>
-          <li><a href="">Я на заправке<small>Ленинский пр-т 3/1</small></a></li>
+          <li><a href="#refuel" id="refuel-page-link">Я на заправке<small>Ленинский пр-т 3/1</small></a></li>
         </ul>
       </div>
     </div>

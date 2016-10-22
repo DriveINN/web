@@ -63,6 +63,6 @@ $('#success-buy').on('click', function () {
   myApp.popup(popupHTML);
 });  
 
-$('#map-page-link').on('click', function () {
+$('#map-page-link, #refuel-page-link').on('click', function () {
     myApp.closeModal('.popover-gas');
 });
