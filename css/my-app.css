@@ -6,6 +6,7 @@
 input {
   -webkit-user-select: auto !important;
 }
+.page,
 .pages,
 .login-screen-content,
 .popup,
@@ -213,6 +214,53 @@ html.ios-gt-8 .navbar .center {
   background: #E8E8E8;
   padding: 5px 0;
 }
+.list-block .item-link.smart-select {
+  width: 100%;
+  background: #fff;
+  margin: 5px 0;
+  padding: 0 0 0 15px;
+}
+.list-block .item-link.smart-select .item-after {
+  padding-right: 30px;
+}
+.list-block .item-link.smart-select .item-content {
+  padding: 10px 0;
+  line-height: 1.3em;
+  font-weight: lighter;
+  font-size: 33px;
+  color: #B6B6B6;
+}
+.list-block .item-link.smart-select .item-after {
+  max-height: inherit;
+  max-width: 100%;
+}
+.list-block .input-row i {
+  position: absolute;
+  right: 10px;
+  top: 31px;
+}
+.list-block .input-row span {
+  font-size: 37px;
+}
+.list-block .input-row input {
+  text-align: center;
+  font-size: 33px;
+  font-weight: lighter;
+  padding: 5px 30px;
+  color: #8e8e93;
+}
+.pad-top {
+  padding-top: 30px;
+}
+.smart-select-label {
+  color: #8B8B8B;
+  font-size: 21px;
+  font-weight: lighter;
+  padding: 20px 0 0 20px;
+}
+.page.smart-select-page .list-block .item-content {
+  padding-left: 20px;
+}
 /* icons */
 i.icon.icon-car {
   background-image: url(../images/sedan.png);
@@ -227,6 +275,13 @@ i.icon.icon-settings {
   background-size: auto 100%;
   width: 23px;
   height: 23px;
+}
+i.icon.icon-close {
+  background-image: url(../images/close.png);
+  background-position: 0 0;
+  background-size: auto 100%;
+  width: 17px;
+  height: 17px;
 }
 i.icon.icon-fire {
   background-image: url(../images/fire.png);

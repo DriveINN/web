@@ -8,7 +8,8 @@ var $ = Dom7;
 var mainView = myApp.addView('.view-main', {
     // Because we use fixed-through navbar we can enable dynamic navbar
     dynamicNavbar: true,
-    domCache: true
+    domCache: true,
+    smartSelectOpenIn:'picker'
 });
 
 // myApp.loginScreen();
