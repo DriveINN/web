@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>My App</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/my-app.css">
+  </head>
+  <body>
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Views-->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class-->
+      <div class="view view-main">
+        <!-- Top Navbar-->
+        <div class="navbar">
+          <!-- Navbar inner for Index page-->
+          <div data-page="index" class="navbar-inner">
+            <!-- We have home navbar without left link-->
+            <div class="center sliding">Awesome App</div>
+            <div class="right">
+              <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+            </div>
+          </div>
+          <!-- Navbar inner for About page-->
+          <div data-page="about" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">About Us</div>
+          </div>
+          <!-- Navbar inner for Services page-->
+          <div data-page="services" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">Services</div>
+          </div>
+          <!-- Navbar inner for Form page-->
+          <div data-page="form" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">Form</div>
+          </div>
+        </div>
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+          <!-- Index Page-->
+          <div data-page="index" class="page">
+            <!-- Scrollable page content-->
+            <div class="page-content">
+              <div class="content-block-title">Welcome To My Awesome App</div>
+              
+            </div>
+          </div>
+          <!-- About Page-->
+          <div data-page="about" class="page cached">
+            <div class="page-content">
+              <div class="content-block">
+                
+              </div>
+            </div>
+          </div>
+          <!-- Services Page-->
+          <div data-page="services" class="page cached">
+            <div class="page-content">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="login-screen">
+      <div class="view">
+        <div class="page">
+          <div class="page-content login-screen-content">
+            <div class="login-screen-title">Добро пожаловать<br> в DRIVE-INN</div>
+            <p class="login-sub-title">Авторизация по номеру телефона</p>
+            <form>
+              <div class="list-block">
+                <ul>
+                  <li class="item-content item-phone">
+                    <div class="item-inner">
+                      <div class="item-input">
+                        <div class="login-input input-tel"> 
+                          <span>+7</span>
+                          <input id="phone" type="tel" value="" maxlength="15" pattern="[0-9]*">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item-content item-code">
+                    <div class="item-inner">
+                      <div class="item-input">
+                        <input id="phone" type="tel" value="" maxlength="6" pattern="[0-9]*">
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="list-block">
+                <ul>
+                  <li id="login-btns">
+                    <a href="#" id="get-password" class="item-link list-button list-button-custom">Войти</a>
+                    <div class="button-divider">или</div>
+                    <a href="#" id="get-code-btn" class="item-link list-button">Зарегистрироваться</a>
+                  </li>
+                  <li style="display:none;" id="code-btns">
+                    <a href="#" id="" class="item-link list-button list-button-custom">Повторить отправку кода</a>
+                  </li>
+                </ul>
+                <div class="list-block-label">
+                  <!-- <p><a href="#" class="close-login-screen">Close Login Screen</a></p> -->
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popup popup-userinfo">
+      <div class="login-screen-title">Личные данные</div>
+      <div class="list-block">
+        <ul>
+          <li>
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-input">
+                  <input type="text" placeholder="ФИО">
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-input">
+                  <input type="email" placeholder="E-mail">
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="#" id="" class="item-link list-button list-button-license"><small>Условия соглашения</small></a>
+          </li>
+          <li>
+            <a href="#" id="get-password-2" class="item-link list-button list-button-custom">Принимаю условия</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/my-app.js"></script>
+  </body>
+</html>

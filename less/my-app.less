@@ -1,0 +1,110 @@
+.pages,
+.login-screen-content,
+.popup,
+.list-block ul{
+    background-color: #F8F8F8;
+}
+.login-screen-content{
+    .login-screen-title{
+        padding-top: 1em;
+        /*line-height: 1em;*/
+        color: #303030;
+    }
+    .list-block{
+        margin-top: 0; 
+    }
+    .login-sub-title{
+        text-align: center;
+        padding-top: 10px;
+        color: #8B8B8B;
+    }
+    .list-button{
+        margin: 0 25px;
+    }
+    .item-code{
+        display: none;
+    }
+    .login-input{
+        &.input-tel{
+            padding-left: 35px;
+            position: relative;
+        }
+        span{
+            float: left;
+            font-size: 20px;
+            line-height: 1.3em;
+            padding: 5px;
+            position: absolute;
+            left: 0;
+        }
+    }
+}
+.list-block {
+    ul:after,
+    ul:before{
+        display:none;
+    }
+    .item-content{
+        padding: 0;
+        .item-inner{
+            padding: 0;
+            &:after{
+                display:none;
+            }
+        }
+    }
+}
+.login-screen-title{
+    padding-top: 1em;
+    color: #303030;
+    margin-top: 25px; 
+}
+.list-block .item-input{
+    background-color: #fff;
+    margin: 15px 0 0;
+    padding: 5px 15px;
+    input{
+        background: transparent;
+        border: none;
+        display: block;
+        font-size: 20px;
+        line-height: 1.3em;
+        padding: 5px 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: auto;
+    }
+}
+.list-block .item-link.list-button{
+    color: #3192EC;
+    font-size: 15px;
+}
+.list-block .item-link.list-button.list-button-license{
+    text-align: left;
+    font-size: 15px;
+    &:after{
+        display:none;
+    }
+}
+.button-divider{
+    text-align: center;
+    padding-top: 10px;
+}
+.list-block .item-link.list-button.list-button-custom,
+.button-custom{
+    padding: 15px;
+    line-height: 1.4em;
+    border-top: 1px solid #c8c7cc;
+    border-bottom: 1px solid #c8c7cc;
+    font-size: 18px;
+}
+.button-custom{
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    right: 20px;
+    text-align: center;
+}
+.list-block .item-link.list-button:after{
+    display: none;
+}
