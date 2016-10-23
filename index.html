@@ -198,12 +198,12 @@
                     <div class="item-inner">
                       <a href="#" class="item-link smart-select" data-open-in="picker">
                         <!-- select -->
-                        <select name="petrol">
-                          <option value="95" selected>АИ-95</option>
-                          <option value="92">АИ-92</option>
-                          <option value="98">АИ-98</option>
-                          <option value="98U">АИ-98U</option>
-                          <option value="Diesel">Diesel</option>
+                        <select name="petrol" id="buy-type">
+                          <option value="f95" selected>АИ-95</option>
+                          <option value="f92">АИ-92</option>
+                          <option value="f98">АИ-98</option>
+                          <option value="f95U">АИ-95+</option>
+                          <option value="fd">ДТ</option>
                         </select>
                         <div class="item-content">
                           <div class="item-inner">
@@ -220,9 +220,9 @@
                     <div class="item-inner">
                       <div class="item-input input-row row">
                         <i class="icon icon-fire icon-fire-blue"></i>
-                        <div class="col-50"><input id="" type="text" value="" placeholder="P" pattern="[0-9]*" ></div>
+                        <div class="col-50"><input id="buy-amount" type="text" value="" placeholder="P" pattern="[0-9]*" ></div>
                         <span> / </span>
-                        <div class="col-50"><input id="" type="text" value="" pattern="[0-9]*"></div>
+                        <div class="col-50"><input id="buy-liters" type="text" value="" pattern="[0-9]*"></div>
                       </div>
                     </div>
                   </div>
@@ -233,7 +233,7 @@
                     <div class="item-inner">
                       <a href="#" class="item-link smart-select" data-open-in="picker">
                         <!-- select -->
-                        <select id="buy-cards" name="card"></select>
+                        <select id="buy-card" name="card"></select>
                         <div class="item-content">
                           <div class="item-inner">
                             <!-- Select label -->
@@ -244,7 +244,7 @@
                   </div>
                 </li>
                 <li class="pad-top">
-                  <a href="#" id="" class="item-link list-button list-button-custom">Купить топливо</a>
+                  <a href="#" id="buy-button" class="item-link list-button list-button-custom">Купить топливо</a>
                 </li>
               </ul>
             </div>
@@ -861,5 +861,6 @@
     <!-- Path to your app js-->
     <script type="text/javascript" src="js/api-maps.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
   </body>
 </html>
