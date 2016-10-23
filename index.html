@@ -22,7 +22,7 @@
         <div class="navbar">
           <!-- Navbar inner for Index page-->
           <div data-page="index" class="navbar-inner">
-            <div class="left"><a href="#cars" class="link icon-only"> <i class="icon icon-car"></i></a></div>
+            <div data-bind-click="carsPage" class="left"><a href="#cars" class="link icon-only"> <i class="icon icon-car"></i></a></div>
             <div class="center sliding color-white">Драйв INN</div>
             <div class="right"><a href="#" class="link icon-only"> <i class="icon icon-settings"></i></a></div>
           </div>
@@ -87,31 +87,13 @@
             <div class="page-content">
             <a href="" class="gas-button open-popover" data-popover=".popover-gas"></a>
             <div class="list-block main-list">
-              <ul>
+              <ul id="activity">
                 <li>
                   <a href="#wallet" class="list-top-item">
                     <div class="text1">Ваш баланс</div>
                     <div class="text2">638 <i class="icon icon-fire icon-fire-blue"></i> АИ-95</div>
                     <div class="text3">83 балла</div>
                   </a>
-                </li>
-                <li>
-                  <div class="list-item gas">
-                    <div class="list-item-title">-35 литров АИ-95</div>
-                    <div class="list-item-subtitle">Tesla Model S</div>
-                  </div>
-                </li>
-                <li>
-                  <div class="list-item station">
-                    <div class="list-item-title">-35 литров АИ-95</div>
-                    <div class="list-item-subtitle">Tesla Model S</div>
-                  </div>
-                </li>
-                <li>
-                  <div class="list-item gas">
-                    <div class="list-item-title">-35 литров АИ-95</div>
-                    <div class="list-item-subtitle">Tesla Model S</div>
-                  </div>
                 </li>
               </ul>
             </div>
@@ -247,6 +229,7 @@
             <div class="page-content">
             <div class="list-block list-cars">
               <ul>
+
                 <li>
                   <a href="" class="item-link item-content">
                     <div class="item-inner">
@@ -254,6 +237,7 @@
                     </div>
                   </a>
                 </li>
+
                 <li>
                   <a href="#" class="item-link item-content">
                     <div class="item-inner">

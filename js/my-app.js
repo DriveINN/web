@@ -8,7 +8,11 @@ if (localStorage.getItem('phone') !== null) {
 } else F7.loginScreen();
 function init() {
   run(api, 'transactions/my', {}, function(data) {
-    allert(data);
+    for (var i = 0; i < data.length; i++) {
+      var goods = [];
+      for (var j = 0; j < data[i].goods.length; j++) goods.push(data[i].goods[j].ammount + ' ' + data[i].goods[j].description);
+      $('#activity').append('<li><div class="list-item gas"><div class="list-item-title">' + goods.join(', ') + '</div></div></li>');
+    }
   });
 }
 var inputL = 0;
@@ -116,6 +120,33 @@ $('#success-buy').on('click', function () {
   F7.popup(popupHTML);
 });  
 
+
+$('[data-bind-click="carsPage"]').on('click', function () {
+    var $listBlock = $('.list-block ul');
+    $listBlock.hide();
+    $.ajax({
+        url: 'https://driveinn.ru/api/cars/my',
+        method: 'GET',
+        dataType: 'json',
+        headers: {
+            Authorization: 'Bearer ' + window.Authorization
+        },
+        success: function(data) {
+
+            $listBlock.html('');
+
+            data.forEach(function (d) {
+                $listBlock.html(  $listBlock.html() + '<li><a href="" class="item-link item-content"> <div class="item-inner"> <div class="item-title">' + d.label + '</div> </div> </a> </li>');
+            });
+
+            $listBlock.show();
+        },
+        error: function () {
+            $listBlock.show();
+        }
+    });
+});
+
 $('#map-page-link').on('click', function () {
     F7.closeModal('.popover-gas');
 });
@@ -137,6 +168,9 @@ function api(method, query, callback, error) {
     setTimeout(function() { callback(data); }, 0);
   }, error: error});
 }
+
+
+
 
 
 
