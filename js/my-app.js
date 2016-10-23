@@ -180,6 +180,21 @@ var loadCarsList = function()
 F7.onPageReinit('cars', loadCarsList);
 F7.onPageInit('cars', loadCarsList);
 
+var fuelCount = 0;
+function updateOrderFuel()
+{
+  fuelCount = ($('#fuel-count').val() | 0) || 35;
+  $('#order-fuel-count')[0].firstChild.textContent = fuelCount + ' ';
+  $('#fuel-count-order-info')[0].firstChild.textContent = fuelCount + ' ';
+}
+F7.onPageInit('order', updateOrderFuel);
+F7.onPageInit('order', updateOrderFuel);
+
+function updateFuelCard(){
+  $('#fuel-card-order')[0].firstChild.textContent = currentUser.f95 + ' ';
+}
+F7.onPageInit('refuel', updateFuelCard);
+F7.onPageInit('refuel', updateFuelCard);
 
 $('#make-transaction').on('click', function(){
   run(api, 'transactions/make', {
@@ -189,11 +204,11 @@ $('#make-transaction').on('click', function(){
     goods: JSON.stringify([
       {
         guid: '51d854612-f214-1f53-0fee-f4d98f9f73a1',
-        ammount: 35
+        ammount: fuelCount
       }
     ])
   }, function(data) {
-    currentUser.f95 -= 35;
+    currentUser.f95 -= fuelCount;
     mainView.router.load({pageName: 'order-info'});
   });
 });
