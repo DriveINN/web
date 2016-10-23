@@ -8,7 +8,11 @@ if (localStorage.getItem('phone') !== null) {
 } else F7.loginScreen();
 function init() {
   run(api, 'transactions/my', {}, function(data) {
-    allert(data);
+    for (var i = 0; i < data.length; i++) {
+      var goods = [];
+      for (var j = 0; j < data[i].goods.length; j++) goods.push(data[i].goods[j].ammount + ' ' + data[i].goods[j].description);
+      $('#activity').append('<li><div class="list-item gas"><div class="list-item-title">' + goods.join(', ') + '</div></div></li>');
+    }
   });
 }
 var inputL = 0;
