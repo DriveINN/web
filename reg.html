@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/my-app.css">
+  </head>
+  <body>
+    <img src="img.png" width="100%"/>
+    <div class="login-screen modal-in">
+      <div class="view">
+        <div class="pages">
+          <div class="page" id="login-1">
+            <div class="page-content login-screen-content">
+              <div id="login-title" class="login-screen-title">Добро пожаловать<br> в DriveINN</div>
+              <p id="login-descr" class="login-sub-title">Авторизация по номеру телефона</p>
+                <div class="list-block">
+                  <ul>
+                    <li class="item-content item-phone">
+                      <div class="item-inner">
+                        <div class="item-input">
+                          <div id="login-phone" class="login-input input-tel"> 
+                            <span>+7</span>
+                            <input id="input-phone" type="tel" value="" maxlength="15" pattern="[0-9]*">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="list-block">
+                  <ul>
+                    <li><a href="#" id="button-1" class="item-link list-button list-button-custom disabled">Далее</a></li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+          <div class="page cached" data-page="login-2" id="login-2">
+            <div class="page-content login-screen-content">
+              <div id="login-title" class="login-screen-title">Добро пожаловать<br> в DriveINN</div>
+              <p id="login-descr" class="login-sub-title">Код, полученный в СМС</p>
+                <div class="list-block">
+                  <ul>
+                    <li class="item-content item-phone">
+                      <div class="item-inner">
+                        <div class="item-input">
+                          <div class="login-input"> 
+                            <input id="input-sms" type="tel" value="" maxlength="6" pattern="[0-9]*">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="list-block">
+                  <ul>
+                    <li><a href="#" class="item-link list-button list-button-custom">Повторить отправку кода</a></li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+          <div class="page cached" data-page="login-3" id="login-3">
+            <div class="page-content login-screen-content">
+              <div id="login-title" class="login-screen-title">Личные данные</div>
+                <div class="list-block">
+                  <ul>
+                    <li>
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-input">
+                            <input id="input-name" type="text" placeholder="ФИО">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-input">
+                            <input id="userinfo-email" type="email" placeholder="E-mail">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="#" id="" class="item-link list-button list-button-license"><small>Условия соглашения</small></a>
+                    </li>
+                    <li>
+                      <a href="#" id="button-3" class="item-link list-button list-button-custom">Принимаю условия</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="page cached" data-page="login-4" id="login-4">
+              <div class="page-content login-screen-content">
+              <div id="login-title" class="login-screen-title">Создайте пароль</div>
+              <div class="list-block list-block-password">
+                <ul>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-inner">
+                        <div class="item-input">
+                          <input id="input-pass" maxlength="4" pattern="[0-9]*" type="password" pattern="[0-9]*">
+                          <span class="line line1"></span>
+                          <span class="line line2"></span>
+                          <span class="line line3"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="page cached" data-page="login-5" id="login-5">
+              <div class="page-content login-screen-content">
+              <div id="login-title" class="login-screen-title">Регистрация завершена успешно!</div>
+              <div class="list-block">
+                <ul>
+                  <li><a href="#" id="button-5" class="item-link list-button list-button-custom">Начать использование</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script>
+      var F7 = new Framework7();
+      var view = F7.addView('.view', {domCache: true});
+      var $ = Dom7;
+      $('#button-1').click(function() {
+        F7.showIndicator();
+        setTimeout(function() {
+          F7.hideIndicator();  
+          view.router.load({pageName: 'login-2'});
+          //$('#input-sms').focus();
+        }, 500);
+      });
+      var inputL = 0;
+      $('#input-phone').keydown(function () {
+        var curchr = this.value.length;
+        var curval = $(this).val();
+        if(inputL < this.value.length) {
+          if (curchr == 3 && curval.indexOf('(') == -1) { $("#input-phone").val("(" + curval + ")" + "-"); }
+          else if (curchr == 4 && curval.indexOf(')') == -1){ $("#input-phone").val(curval + ")" + "-"); }
+          else if (curchr == 9) { $("#input-phone").val(curval + "-"); }
+          else if (curchr == 12) { $("#input-phone").val(curval + "-"); }
+          inputL = this.value.length;
+        } else { inputL = this.value.length; }
+      });
+      $('#input-phone').keyup(function () {
+        if ($('#input-phone').val().length == 15) $('#button-1').removeClass('disabled'); else $('#button-1').addClass('disabled');
+      });
+      $('#input-phone').keypress(function (e) {  if (e.which === 13 && $('#input-phone').val().length == 15) $('#button-1').click(); });
+      $('#input-sms').keyup(function () {
+        if ($('#input-sms').val().length == 6) {
+          F7.showIndicator();
+          setTimeout(function() {
+            F7.hideIndicator();  
+            view.router.load({pageName: 'login-3'});
+            //$('#input-name').focus();
+          }, 500);
+        }
+      });
+      $('#button-3').click(function() {
+        F7.showIndicator();
+        setTimeout(function() {
+          F7.hideIndicator();  
+          view.router.load({pageName: 'login-4'});
+          //$('#input-pass').focus();
+        }, 500);
+      });
+      $('#input-pass').keyup(function () {
+        if ($('#input-pass').val().length == 4) {
+          F7.showIndicator();
+          setTimeout(function() {
+            F7.hideIndicator();  
+            view.router.load({pageName: 'login-5'});
+          }, 500);
+        }
+      });
+      $('#button-5').click(function() {
+        F7.closeModal();
+      });
+    </script>
+  </body>
+</html>
