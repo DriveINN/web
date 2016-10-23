@@ -42,6 +42,7 @@ $('#button-next').click(function () {
       $('#login-descr').text('Код полученный в СМС');
       $('#login-phone').hide();
       $('#login-sms').show();
+      $('#input-sms')[0].removeAttribute('disabled');
       $('#input-sms').focus();
       $('#login-next').hide();
       $('#login-retry').show();
@@ -49,7 +50,7 @@ $('#button-next').click(function () {
   });
 });
 $('#input-login').keyup(function () {
-  if ($('#input-login').val().length == 4) {
+  if ($('#input-login').val().length == 4){
     run(api, 'users/authenticate', {method: 'POST', phone: window.phone, pin: $('#input-login').val()}, function(data) {
       if (data.errorCode == 0) {
         localStorage.setItem('phone', window.phone);
@@ -77,7 +78,9 @@ $('#input-register').keyup(function () {
 });
 $('#input-sms').keyup(function () {
   if ($('#input-sms').val().length == 6) {
+    $('#input-sms')[0].setAttribute('disabled', true);
     run(api, 'users/register_complete', {method: 'POST', phone: window.phone, sessionId: window.sessionId, verificationCode: $('#input-sms').val()}, function(data) {
+      $('#input-sms')[0].removeAttribute('disabled');
       if (data.errorCode == 0) {
         F7.closeModal('.login-screen');
         F7.popup('#popup-userinfo');
