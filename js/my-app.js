@@ -122,7 +122,7 @@ $('#success-buy').on('click', function () {
 
 
 $('[data-bind-click="carsPage"]').on('click', function () {
-    var $listBlock = $('.list-block ul');
+    var $listBlock = $('.list-cars ul');
     $listBlock.hide();
     $.ajax({
         url: 'https://driveinn.ru/api/cars/my',
