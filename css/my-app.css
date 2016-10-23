@@ -9,6 +9,12 @@ input {
 a {
   color: #01B8E0;
 }
+h2 {
+  font-weight: lighter;
+  padding-left: 20px;
+  text-align: center;
+  margin: 0;
+}
 .page,
 .pages,
 .login-screen-content,
@@ -484,7 +490,7 @@ html.ios-gt-8 .navbar .center {
 .additional .additional-inner .additional-item .label-switch {
   width: 100%;
   height: inherit;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: lighter;
   position: relative;
 }
@@ -511,6 +517,13 @@ html.ios-gt-8 .navbar .center {
 .additional .additional-inner .additional-item .label-switch input[type=checkbox]:checked + .checkbox {
   background: url("../images/checkmark_filled.png") 0 100% no-repeat;
   background-size: 55px 55px;
+}
+.contacts-block .item-content {
+  padding: 5px 20px;
+}
+.contacts-block .list-group-title {
+  background: #eee;
+  padding: 0 20px;
 }
 /* icons */
 i.icon.icon-car {
