@@ -79,6 +79,11 @@
             <div class="center sliding color-white">Заказ принят и оплачен</div>
             <div class="right"><a href="" class="link icon-only back"> <i class="icon icon-close"></i></a></div>
           </div>
+          <!-- Navbar inner for Invite page-->
+          <div data-page="invite" class="navbar-inner cached">
+            <div class="center sliding color-white">Пригласить друга</div>
+            <div class="right"><a href="" class="link icon-only back"> <i class="icon icon-close"></i></a></div>
+          </div>
         </div>
         <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
         <div class="pages navbar-through no-toolbar">
@@ -107,16 +112,40 @@
                 <li>
                   <a href="#gas-account" class="item-link item-content">
                     <div class="item-inner">
-                      <div class="item-title">АИ-95</div>
-                      <div class="item-after">638 <i class="icon icon-fire-2 icon-fire-blue"></i></div>
+                      <div class="item-title">АИ-92</div>
+                      <div class="item-after"><span id="my-f92"></span> <i class="icon icon-fire-2 icon-fire-blue"></i></div>
                     </div>
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="item-link item-content">
+                  <a href="#gas-account" class="item-link item-content">
+                    <div class="item-inner">
+                      <div class="item-title">АИ-95</div>
+                      <div class="item-after"><span id="my-f95"></span> <i class="icon icon-fire-2 icon-fire-blue"></i></div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#gas-account" class="item-link item-content">
+                    <div class="item-inner">
+                      <div class="item-title">АИ-95+</div>
+                      <div class="item-after"><span id="my-f95U"></span> <i class="icon icon-fire-2 icon-fire-blue"></i></div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#gas-account" class="item-link item-content">
+                    <div class="item-inner">
+                      <div class="item-title">АИ-98</div>
+                      <div class="item-after"><span id="my-f98"></span> <i class="icon icon-fire-2 icon-fire-blue"></i></div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#gas-account" class="item-link item-content">
                     <div class="item-inner">
                       <div class="item-title">ДТ</div>
-                      <div class="item-after">638 <i class="icon icon-fire-2 icon-fire-blue"></i></div>
+                      <div class="item-after"><span id="my-fd"></span> <i class="icon icon-fire-2 icon-fire-blue"></i></div>
                     </div>
                   </a>
                 </li>
@@ -124,7 +153,7 @@
                   <a href="#" class="item-link item-content">
                     <div class="item-inner">
                       <div class="item-title">Бонусные баллы</div>
-                      <div class="item-after">63 <i class="icon icon-fire-2 icon-fire-blue"></i></div>
+                      <div class="item-after"><span id="my-bonus2"></span> <i class="icon icon-fire-2 icon-fire-blue"></i></div>
                     </div>
                   </a>
                 </li>
@@ -191,9 +220,9 @@
                     <div class="item-inner">
                       <div class="item-input input-row row">
                         <i class="icon icon-fire icon-fire-blue"></i>
-                        <div class="col-50"><input id="" type="text" value="" placeholder="P"></div>
+                        <div class="col-50"><input id="buy-amount" type="text" value="" placeholder="P" pattern="[0-9]*" ></div>
                         <span> / </span>
-                        <div class="col-50"><input id="" type="text" value=""></div>
+                        <div class="col-50"><input id="buy-liters" type="text" value="" pattern="[0-9]*"></div>
                       </div>
                     </div>
                   </div>
@@ -204,10 +233,7 @@
                     <div class="item-inner">
                       <a href="#" class="item-link smart-select" data-open-in="picker">
                         <!-- select -->
-                        <select name="card">
-                          <option value="1" selected>0000 00** **00 0000</option>
-                          <option value="2">0000 00** **00 0000</option>
-                        </select>
+                        <select id="buy-card" name="card"></select>
                         <div class="item-content">
                           <div class="item-inner">
                             <!-- Select label -->
@@ -437,7 +463,7 @@
                 <div class="text1">АИ-95 <span>35 <i class="icon icon-fire icon-fire-blue"></i></span></div>
                 <a href="">Отменить</a>
               </div>
-              <div class="login-screen-title">Заказать<br> товары и услуги</div>
+              <h2>Заказать<br> товары и услуги</h2>
               <div class="additional">
                 <div class="additional-inner">
                   <div class="additional-item">
@@ -480,7 +506,7 @@
               </div>
               <div class="list-block">
                 <ul>
-                  <li>
+                  <!-- <li>
                     <div class="smart-select-label">Способ оплаты</div>
                     <div class="item-content">
                       <div class="item-inner">
@@ -490,9 +516,9 @@
                         </a>
                       </div>
                     </div>
-                  </li>
+                  </li> -->
                   <li class="pad-top">
-                    <a href="#order-info" id="make-transaction" class="item-link list-button list-button-custom">Обновить заказ</a>
+                    <a href="#order-info" id="" class="item-link list-button list-button-custom">Обновить заказ</a>
                   </li>
                 </ul>
               </div>
@@ -506,11 +532,192 @@
                 <small>АЗС № 198</small>
               </div>
               <div class="order-info-box">
-                <div class="text1">АИ-95 <span>35 <i class="icon icon-fire icon-fire-blue"></i></span></div>
-                <!--<div class="text2">Чернение колес<span>50 руб.</span></div>-->
+                <div class="text1">АИ-95 <span>25 <i class="icon icon-fire icon-fire-blue"></i></span></div>
+                <div class="text2">Чернение колес<span>50 руб.</span></div>
               </div>
-              <div class="label">Пригласи друга и получите по 5 литров топлива каждый!<a>Выбрать друга</a></div>
+              <div class="label">Пригласи друга и получите по 5 литров топлива каждый!<a href="#invite">Выбрать друга</a></div>
             </div>
+          </div>
+          <!-- Invite Friend Page-->
+          <div data-page="invite" class="page cached">
+              <div class="page-content contacts-content">
+                <div class="list-block contacts-block">
+                  <div class="list-group">
+                    <ul>
+                      <li class="list-group-title">A</li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title">Aaron </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title">Abbie</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title">Adam</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title">Adele</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title">Agatha</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title">Agnes</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title">Albert</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title">Alexander</div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="list-group">
+                    <ul>
+                      <li class="list-group-title">B</li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title">Bailey</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title">Barclay</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title">Bartolo</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title">Bellamy</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title">Belle</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title">Benjamin</div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="list-group">
+                    <ul>
+                      <li class="list-group-title">C</li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title">Caiden</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title">Calvin</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title">Candy</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title">Carl</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title">Cherilyn</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title">Chester</div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title">Chloe</div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="list-group">
+                    <ul>
+                      <li class="list-group-title">V</li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title">Vladimir</div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
           </div>
         </div>
       </div>

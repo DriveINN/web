@@ -9,11 +9,30 @@ if (localStorage.getItem('phone') !== null) {
 function init() {
   updateActivity();
   $.ajax({url: 'https://driveinn.ru/getcards.php', data: {phone: window.phone}, dataType: 'json', success: function(data) {
-    // allert(data);
+    for (var i = 0; i < data.cards.length; i++) {
+      $('#buy-card').append('<option value="' + data.cards[i] + '">' + data.cards[i] + '</option>');
+    }
+    $('#buy-card').append('<option value="">Новая карта</option>');
   }, error: function() { alert('error') }});
-  //<option value="1" selected>0000 00** **00 0000</option>
-  //<option value="2">0000 00** **00 0000</option>
 }
+$('#buy-button').click(function() {
+  var ref = cordova.InAppBrowser.open('https://driveinn.ru/fuelcard.php?amount=' + ($('#buy-amount').val() * 100) + '&liters=' + $('#buy-liters').val() + '&fuel=' + $('#buy-type').val() + '&phone=' + window.phone + ($('#buy-card').val() == '' ? '' : '&pan=' + $('#buy-card').val()), '_blank', {});
+  ref.addEventListener('loadstart', function(event) {
+    if (event.url.substr(0, 31) === 'https://driveinn.ru/fuelcardok/') {
+      var data = event.url.substr(31).split('/');
+      currentUser[data[0]] = data[1];
+      $('#my-' + data[0]).text(data[1]);
+      if (data[0] == 'f95') $('#my-f').text(data[1]);
+      ref.close();
+      setTimeout(function() {
+        alert('Пополение успешно');
+      }, 500);
+    }
+  });
+});
+$('#buy-type').change(function () { $('#buy-liters').val(($('#buy-amount').val() / price[$('#buy-type').val()]).toFixed(2)) });
+$('#buy-amount').keyup(function () { $('#buy-liters').val(($('#buy-amount').val() / price[$('#buy-type').val()]).toFixed(2)) });
+$('#buy-liters').keyup(function () { $('#buy-amount').val(($('#buy-liters').val() * price[$('#buy-type').val()]).toFixed(2)) });
 var inputL = 0;
 var currentUser = null;
 
@@ -67,7 +86,7 @@ $('#input-login').keyup(function () {
         F7.closeModal('#popup-login');
         $('#input-login').blur();
         currentUser = data.user;
-        init(data);
+        init(data.user);
       } else {
         $('#input-login').val('');
         alert(data.message);
@@ -115,7 +134,7 @@ $('#regist-finish').click(function () {
   F7.popup(popupHTML);
 });
 $('#success-buy').on('click', function () {
-  var popupHTML = '<div class="popup"><div class="login-screen-title">Топливная карта<br> успешно пополнена</div><div class="title-custom"><span>+200</span> <i class="icon icon-fire icon-fire-blue"></i> АИ-95</div><div class="label">Пригласи друга и получите по 5 литров топлива каждый!<a>Выбрать друга</a></div><a class="button-custom">Закрыть</a></div>';
+  var popupHTML = '<div class="popup"><div class="login-screen-title">Топливная карта<br> успешно пополнена</div><div class="title-custom"><span>+200</span> <i class="icon icon-fire icon-fire-blue"></i> АИ-95</div><div class="label">Пригласи друга и получите по 5 литров топлива каждый!<a href="#invite">Выбрать друга</a></div><a class="button-custom">Закрыть</a></div>';
   F7.popup(popupHTML);
 });  
 $('#add-car-save').on('click', function(){
@@ -227,6 +246,9 @@ function api(method, query, callback, error) {
     setTimeout(function() { callback(data); }, 0);
   }, error: error});
 }
+document.addEventListener('deviceready', function() {
+  window.alert = function(message) { navigator.notification.alert('', function() { }, message, 'OK'); }
+}, false);
 
 
 
