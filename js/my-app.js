@@ -129,7 +129,7 @@ $('#regist-finish').click(function () {
   F7.popup(popupHTML);
 });
 $('#success-buy').on('click', function () {
-  var popupHTML = '<div class="popup"><div class="login-screen-title">Топливная карта<br> успешно пополнена</div><div class="title-custom"><span>+200</span> <i class="icon icon-fire icon-fire-blue"></i> АИ-95</div><div class="label">Пригласи друга и получите по 5 литров топлива каждый!<a>Выбрать друга</a></div><a class="button-custom">Закрыть</a></div>';
+  var popupHTML = '<div class="popup"><div class="login-screen-title">Топливная карта<br> успешно пополнена</div><div class="title-custom"><span>+200</span> <i class="icon icon-fire icon-fire-blue"></i> АИ-95</div><div class="label">Пригласи друга и получите по 5 литров топлива каждый!<a href="#invite">Выбрать друга</a></div><a class="button-custom">Закрыть</a></div>';
   F7.popup(popupHTML);
 });  
 $('#add-car-save').on('click', function(){
