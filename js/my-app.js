@@ -7,13 +7,14 @@ if (localStorage.getItem('phone') !== null) {
   //$('#input-login').focus();
 } else F7.loginScreen();
 function init() {
-  run(api, 'transactions/my', {}, function(data) {
-    for (var i = 0; i < data.length; i++) {
-      var goods = [];
-      for (var j = 0; j < data[i].goods.length; j++) goods.push(data[i].goods[j].ammount + ' ' + data[i].goods[j].description);
-      $('#activity').append('<li><div class="list-item '+ (data[i].total > 0 ? 'sell' : data[i].card === 'creditcard' ? 'station' : 'gas')  +'"><a href="#order-info"><div class="list-item-title">' + goods.join(', ') + '</div></a></div></li>');
-    }
-  });
+  updateActivity();
+  // run(api, 'transactions/my', {}, function(data) {
+  //   for (var i = 0; i < data.length; i++) {
+  //     var goods = [];
+  //     for (var j = 0; j < data[i].goods.length; j++) goods.push(data[i].goods[j].ammount + ' ' + data[i].goods[j].description);
+  //     $('#activity').append('<li><div class="list-item '+ (data[i].total > 0 ? 'sell' : data[i].card === 'creditcard' ? 'station' : 'gas')  +'"><a href="#order-info"><div class="list-item-title">' + goods.join(', ') + '</div></a></div></li>');
+  //   }
+  // });
 }
 var inputL = 0;
 var currentUser = null;
@@ -160,6 +161,44 @@ var loadCarsList = function()
 
 F7.onPageReinit('cars', loadCarsList);
 F7.onPageInit('cars', loadCarsList);
+
+
+$('#make-transaction').on('click', function(){
+  run(api, 'transactions/make', {
+    method: 'POST',
+    card: 'f95',
+    stationGuid: '72d9cf12-f314-1a51-0fee-f4d98f9f73ae',
+    goods: JSON.stringify([
+      {
+        guid: '51d854612-f214-1f53-0fee-f4d98f9f73a1',
+        ammount: 35
+      }
+    ])
+  }, function(data) {
+    currentUser.f95 -= 35 * 36;
+    mainView.router.load({pageName: 'order-info'});
+  });
+});
+
+function updateActivity()
+{
+  var list = $('#activity')[0];
+  $('#activity').html('<li>'+
+    '<a href="#wallet" class="list-top-item">'+
+  '<div class="text1">Ваш баланс</div>'+
+'<div class="text2">' + currentUser.f95 + ' <i class="icon icon-fire icon-fire-blue"></i> АИ-95</div>'+
+  '<div class="text3">'+ currentUser.bonus +' балла</div>'+
+'</a>'+
+'</li>');
+  run(api, 'transactions/my', {}, function(data) {
+    for (var i = 0; i < data.length; i++) {
+      var goods = [];
+      for (var j = 0; j < data[i].goods.length; j++) goods.push(data[i].goods[j].ammount + ' ' + data[i].goods[j].description);
+      $('#activity').append('<li><div class="list-item '+ (data[i].total > 0 ? 'sell' : data[i].card === 'creditcard' ? 'station' : 'gas')  +'"><a href="#order-info"><div class="list-item-title">' + goods.join(', ') + '</div></a></div></li>');
+    }
+  });
+}
+F7.onPageReinit('index', updateActivity);
 
 // $('[data-bind-click="carsPage"]').on('click', function () {
 //
