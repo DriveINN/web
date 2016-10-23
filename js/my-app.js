@@ -6,7 +6,15 @@ if (localStorage.getItem('phone') !== null) {
   F7.popup('#popup-login');
   //$('#input-login').focus();
 } else F7.loginScreen();
-function init() {
+function init(data) {
+  $('#my-bonus').text(data.bonus);
+  $('#my-bonus2').text(data.bonus);
+  $('#my-f').text(data.f95);
+  $('#my-f92').text(data.f92);
+  $('#my-f95').text(data.f95);
+  $('#my-f95U').text(data.f95U);
+  $('#my-f98').text(data.f98);
+  $('#my-fd').text(data.fd);
   run(api, 'transactions/my', {}, function(data) {
     for (var i = 0; i < data.length; i++) {
       var goods = [];
@@ -14,6 +22,11 @@ function init() {
       $('#activity').append('<li><div class="list-item '+ (data[i].total > 0 ? 'sell' : data[i].card === 'creditcard' ? 'station' : 'gas')  +'"><a href="#order-info"><div class="list-item-title">' + goods.join(', ') + '</div></a></div></li>');
     }
   });
+  $.ajax({url: 'https://driveinn.ru/getcards.php', data: {phone: window.phone}, dataType: 'json', success: function(data) {
+    allert(data);
+  }, error: function() { alert('error') }});
+  //<option value="1" selected>0000 00** **00 0000</option>
+  //<option value="2">0000 00** **00 0000</option>
 }
 var inputL = 0;
 var currentUser = null;
@@ -68,7 +81,7 @@ $('#input-login').keyup(function () {
         F7.closeModal('#popup-login');
         $('#input-login').blur();
         currentUser = data.user;
-        init();
+        init(data.user);
       } else {
         $('#input-login').val('');
         alert(data.message);
