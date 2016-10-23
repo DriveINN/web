@@ -251,7 +251,10 @@ document.addEventListener('deviceready', function() {
 }, false);
 
 
-
+$('.fiend-invite').on('click', function(){
+  mainView.router.load({pageName: 'index'});
+  alert('Приглашение отправлено!');
+});
 
 
 
