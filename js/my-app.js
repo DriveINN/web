@@ -1,3 +1,4 @@
+var price = {f95: 36.2, f92: 34.4, fd: 35.2, f95U: 37.12, f98: 38.1};
 var F7 = new Framework7();
 var $ = Dom7;
 var mainView = F7.addView('.view-main', { dynamicNavbar: true, domCache: true, smartSelectOpenIn:'picker'});
