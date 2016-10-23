@@ -150,6 +150,10 @@ $('[data-bind-click="carsPage"]').on('click', function () {
 $('#map-page-link').on('click', function () {
     F7.closeModal('.popover-gas');
 });
+$('#map-page-link, #refuel-page-link').on('click', function () {
+  F7.closeModal('.popover-gas');
+});
+
 function allert(data) {
   alert(JSON.stringify(data));
 }
