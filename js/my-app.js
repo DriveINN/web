@@ -194,7 +194,7 @@ function updateFuelCard(){
   $('#fuel-card-order')[0].firstChild.textContent = currentUser.f95 + ' ';
 }
 F7.onPageInit('refuel', updateFuelCard);
-F7.onPageInit('refuel', updateFuelCard);
+F7.onPageReinit('refuel', updateFuelCard);
 
 $('#make-transaction').on('click', function(){
   run(api, 'transactions/make', {
