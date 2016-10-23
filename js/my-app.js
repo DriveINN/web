@@ -1,6 +1,6 @@
 var F7 = new Framework7();
 var $ = Dom7;
-F7.addView('.view-main', { dynamicNavbar: true, domCache: true, smartSelectOpenIn:'picker'});
+var mainView = F7.addView('.view-main', { dynamicNavbar: true, domCache: true, smartSelectOpenIn:'picker'});
 if (localStorage.getItem('phone') !== null) {
   window.phone = localStorage.getItem('phone');
   F7.popup('#popup-login');
@@ -119,33 +119,51 @@ $('#success-buy').on('click', function () {
   var popupHTML = '<div class="popup"><div class="login-screen-title">Топливная карта<br> успешно пополнена</div><div class="title-custom"><span>+200</span> <i class="icon icon-fire icon-fire-blue"></i> АИ-95</div><div class="label">Пригласи друга и получите по 5 литров топлива каждый!<a>Выбрать друга</a></div><a class="button-custom">Закрыть</a></div>';
   F7.popup(popupHTML);
 });  
-
-
-$('[data-bind-click="carsPage"]').on('click', function () {
-    var $listBlock = $('.list-cars ul');
-    $listBlock.hide();
-    $.ajax({
-        url: 'https://driveinn.ru/api/cars/my',
-        method: 'GET',
-        dataType: 'json',
-        headers: {
-            Authorization: 'Bearer ' + window.Authorization
-        },
-        success: function(data) {
-
-            $listBlock.html('');
-
-            data.forEach(function (d) {
-                $listBlock.html(  $listBlock.html() + '<li><a href="" class="item-link item-content"> <div class="item-inner"> <div class="item-title">' + d.label + '</div> </div> </a> </li>');
-            });
-
-            $listBlock.show();
-        },
-        error: function () {
-            $listBlock.show();
-        }
-    });
+$('#add-car-save').on('click', function(){
+  run(api, 'cars/', {
+    method: 'POST',
+    fuel: $('#add-car-fuel').val(),
+    label: $('#add-car-label').val(),
+    number: $('#add-car-number').val(),
+    ammount: $('#add-car-ammount').val()
+  }, function(data) {
+    mainView.router.load({pageName: 'cars'});
+  });
 });
+
+var loadCarsList = function()
+{
+  var $listBlock = $('.list-cars ul');
+  $listBlock.hide();
+  $.ajax({
+    url: 'https://driveinn.ru/api/cars/my',
+    method: 'GET',
+    dataType: 'json',
+    headers: {
+      Authorization: 'Bearer ' + window.Authorization
+    },
+    success: function(data) {
+
+      $listBlock.html('');
+
+      data.forEach(function (d) {
+        $listBlock.html(  $listBlock.html() + '<li><a href="" class="item-link item-content"> <div class="item-inner"> <div class="item-title">' + d.label + '</div> </div> </a> </li>');
+      });
+
+      $listBlock.show();
+    },
+    error: function () {
+      $listBlock.show();
+    }
+  });
+};
+
+F7.onPageReinit('cars', loadCarsList);
+F7.onPageInit('cars', loadCarsList);
+
+// $('[data-bind-click="carsPage"]').on('click', function () {
+//
+// });
 
 $('#map-page-link').on('click', function () {
     F7.closeModal('.popover-gas');
@@ -158,7 +176,7 @@ function allert(data) {
   alert(JSON.stringify(data));
 }
 function run(func) {
-  var args = [], that = {error: function() { navigator.notification.alert('', function() { func.apply(that, args); }, 'No Connection To Instagram', 'Retry'); }};
+  var args = [], that = {error: function() { navigator.notification.alert('', function() { func.apply(that, args); }, 'No Connection', 'Retry'); }};
   for (var i = 1; i < arguments.length; i++) args.push(arguments[i]);
   func.apply(that, args);
 }
