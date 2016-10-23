@@ -176,15 +176,19 @@ html.ios-gt-8 .navbar .center {
 }
 .main-list li .list-item.gas {
   background: url(../images/gas.png) 11px 12px no-repeat;
+  background-size: 28px 28px;
 }
 .main-list li .list-item.station {
   background: url(../images/station.png) 15px 12px no-repeat;
+  background-size: 24px 25px;
 }
 .main-list li .list-item.sell {
   background: url(../images/sell.png) 15px 12px no-repeat;
+  background-size: 26px 25px;
 }
 .main-list .list-top-item {
-  background: #E8E8E8 url(../images/arrow.png) 97% 50% no-repeat;
+  background: #E8E8E8 url("data:image/svg+xml;charset=utf-8,<svg%20viewBox%3D'0%200%2060%20120'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'><path%20d%3D'm60%2061.5-38.25%2038.25-9.75-9.75%2029.25-28.5-29.25-28.5%209.75-9.75z'%20fill%3D'%23c7c7cc'%2F><%2Fsvg>") 97% 50% no-repeat;
+  background-size: 18px auto;
   padding: 20px 0;
   text-align: center;
   display: block;
@@ -214,6 +218,7 @@ html.ios-gt-8 .navbar .center {
   bottom: 10px;
   left: 50%;
   background: url(../images/gasbtn.png) 50% no-repeat;
+  background-size: 96px 96px;
   width: 96px;
   height: 96px;
   margin-left: -48px;
