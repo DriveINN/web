@@ -133,7 +133,6 @@ $('[data-bind-click="carsPage"]').on('click', function () {
             $listBlock.html('');
 
             data.forEach(function (d) {
-                alert(d.label);
                 $listBlock.html(  $listBlock.html() + '<li><a href="" class="item-link item-content"> <div class="item-inner"> <div class="item-title">' + d.label + '</div> </div> </a> </li>');
             });
 
