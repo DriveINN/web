@@ -12,6 +12,8 @@ function init() {
   });
 }
 var inputL = 0;
+var currentUser = null;
+
 $('#input-phone').keydown(function () {
   var curchr = this.value.length;
   var curval = $(this).val();
@@ -61,6 +63,7 @@ $('#input-login').keyup(function () {
         localStorage.setItem('phone', window.phone);
         F7.closeModal('#popup-login');
         $('#input-login').blur();
+        currentUser = data.user;
         init();
       } else {
         $('#input-login').val('');
@@ -71,7 +74,7 @@ $('#input-login').keyup(function () {
 });
 $('#input-register').keyup(function () {
   if ($('#input-register').val().length == 4) {
-    run(api, 'users/changeUserAndSetPin', {method: 'POST', sessionId: window.sessionId, email: $('#userinfo-email').val(), firstName: $('#userinfo-name').val().split(' ')[0], lastName: $('#userinfo-name').val().split(' ')[1], pin: $('#input-register').val()}, function(data) {
+    run(api, 'users/changeUserAndSetPin', {method: 'POST', sessionId: window.sessionId, email: $('#userinfo-email').val(), firstName: $('#userinfo-name').val().split(' ')[0], lastName: $('#userinfo-name').val().split(' ')[1] || 'Anonymous', pin: $('#input-register').val()}, function(data) {
       if (data.errorCode == 0) {
         localStorage.setItem('phone', window.phone);
         F7.closeModal('#popup-register');
