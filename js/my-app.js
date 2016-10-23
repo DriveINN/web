@@ -6,6 +6,11 @@ if (localStorage.getItem('phone') !== null) {
   F7.popup('#popup-login');
   //$('#input-login').focus();
 } else F7.loginScreen();
+function init() {
+  run(api, 'transactions/my', {}, function(data) {
+    allert(data);
+  });
+}
 var inputL = 0;
 $('#input-phone').keydown(function () {
   var curchr = this.value.length;
@@ -55,6 +60,7 @@ $('#input-login').keyup(function () {
         localStorage.setItem('phone', window.phone);
         F7.closeModal('#popup-login');
         $('#input-login').blur();
+        init();
       } else {
         $('#input-login').val('');
         alert(data.message);
