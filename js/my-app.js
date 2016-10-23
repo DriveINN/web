@@ -117,6 +117,34 @@ $('#success-buy').on('click', function () {
   F7.popup(popupHTML);
 });  
 
+
+$('[data-bind-click="carsPage"]').on('click', function () {
+    var $listBlock = $('.list-block ul');
+    $listBlock.hide();
+    $.ajax({
+        url: 'https://driveinn.ru/api/cars/my',
+        method: 'GET',
+        dataType: 'json',
+        headers: {
+            Authorization: 'Bearer ' + window.Authorization
+        },
+        success: function(data) {
+
+            $listBlock.html('');
+
+            data.forEach(function (d) {
+                alert(d.label);
+                $listBlock.html(  $listBlock.html() + '<li><a href="" class="item-link item-content"> <div class="item-inner"> <div class="item-title">' + d.label + '</div> </div> </a> </li>');
+            });
+
+            $listBlock.show();
+        },
+        error: function () {
+            $listBlock.show();
+        }
+    });
+});
+
 $('#map-page-link').on('click', function () {
     F7.closeModal('.popover-gas');
 });
@@ -138,6 +166,9 @@ function api(method, query, callback, error) {
     setTimeout(function() { callback(data); }, 0);
   }, error: error});
 }
+
+
+
 
 
 
