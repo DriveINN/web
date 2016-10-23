@@ -6,24 +6,10 @@ if (localStorage.getItem('phone') !== null) {
   F7.popup('#popup-login');
   //$('#input-login').focus();
 } else F7.loginScreen();
-function init(data) {
-  $('#my-bonus').text(data.bonus);
-  $('#my-bonus2').text(data.bonus);
-  $('#my-f').text(data.f95);
-  $('#my-f92').text(data.f92);
-  $('#my-f95').text(data.f95);
-  $('#my-f95U').text(data.f95U);
-  $('#my-f98').text(data.f98);
-  $('#my-fd').text(data.fd);
-  run(api, 'transactions/my', {}, function(data) {
-    for (var i = 0; i < data.length; i++) {
-      var goods = [];
-      for (var j = 0; j < data[i].goods.length; j++) goods.push(data[i].goods[j].ammount + ' ' + data[i].goods[j].description);
-      $('#activity').append('<li><div class="list-item '+ (data[i].total > 0 ? 'sell' : data[i].card === 'creditcard' ? 'station' : 'gas')  +'"><a href="#order-info"><div class="list-item-title">' + goods.join(', ') + '</div></a></div></li>');
-    }
-  });
+function init() {
+  updateActivity();
   $.ajax({url: 'https://driveinn.ru/getcards.php', data: {phone: window.phone}, dataType: 'json', success: function(data) {
-    allert(data);
+    // allert(data);
   }, error: function() { alert('error') }});
   //<option value="1" selected>0000 00** **00 0000</option>
   //<option value="2">0000 00** **00 0000</option>
@@ -81,7 +67,7 @@ $('#input-login').keyup(function () {
         F7.closeModal('#popup-login');
         $('#input-login').blur();
         currentUser = data.user;
-        init();
+        init(data);
       } else {
         $('#input-login').val('');
         alert(data.message);
@@ -173,6 +159,44 @@ var loadCarsList = function()
 
 F7.onPageReinit('cars', loadCarsList);
 F7.onPageInit('cars', loadCarsList);
+
+
+$('#make-transaction').on('click', function(){
+  run(api, 'transactions/make', {
+    method: 'POST',
+    card: 'f95',
+    stationGuid: '72d9cf12-f314-1a51-0fee-f4d98f9f73ae',
+    goods: JSON.stringify([
+      {
+        guid: '51d854612-f214-1f53-0fee-f4d98f9f73a1',
+        ammount: 35
+      }
+    ])
+  }, function(data) {
+    currentUser.f95 -= 35;
+    mainView.router.load({pageName: 'order-info'});
+  });
+});
+
+function updateActivity()
+{
+  var list = $('#activity')[0];
+  $('#activity').html('<li>'+
+    '<a href="#wallet" class="list-top-item">'+
+  '<div class="text1">Ваш баланс</div>'+
+'<div class="text2">'+ currentUser.f95+ '<span id="my-f"></span> <i class="icon icon-fire icon-fire-blue"></i> АИ-95</div>'+
+  '<div class="text3">'+ currentUser.bonus+ '<span id="my-bonus"></span> балла</div>'+
+  '</a>'+
+    '</li>');
+  run(api, 'transactions/my', {}, function(data) {
+    for (var i = 0; i < data.length; i++) {
+      var goods = [];
+      for (var j = 0; j < data[i].goods.length; j++) goods.push(data[i].goods[j].ammount + ' ' + data[i].goods[j].description);
+      $('#activity').append('<li><div class="list-item '+ (data[i].total > 0 ? 'sell' : data[i].card === 'creditcard' ? 'station' : 'gas')  +'"><a href="#order-info"><div class="list-item-title">' + goods.join(', ') + '</div></a></div></li>');
+    }
+  });
+}
+F7.onPageReinit('index', updateActivity);
 
 // $('[data-bind-click="carsPage"]').on('click', function () {
 //
