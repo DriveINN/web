@@ -167,6 +167,9 @@ html.ios-gt-8 .navbar .center {
 .main-list li .list-item {
   padding: 10px 20px 10px 50px;
 }
+.main-list li .list-item a {
+  color: #000;
+}
 .main-list li .list-item .list-item-title {
   font-size: 21px;
 }
@@ -183,7 +186,7 @@ html.ios-gt-8 .navbar .center {
   background-size: 24px 25px;
 }
 .main-list li .list-item.sell {
-  background: url(../images/sell.png) 15px 12px no-repeat;
+  background: url(../images/sell.png) 10px 12px no-repeat;
   background-size: 26px 25px;
 }
 .main-list .list-top-item {
@@ -214,7 +217,7 @@ html.ios-gt-8 .navbar .center {
   padding: 0 15px 2px;
 }
 .gas-button {
-  position: absolute;
+  position: fixed;
   bottom: 10px;
   left: 50%;
   background: url(../images/gasbtn.png) 50% no-repeat;
@@ -222,6 +225,7 @@ html.ios-gt-8 .navbar .center {
   width: 96px;
   height: 96px;
   margin-left: -48px;
+  z-index: 2;
 }
 .gas-button.active {
   background-image: url(../images/gasbtn-fill.png);
